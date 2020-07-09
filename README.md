@@ -34,9 +34,9 @@ result = net.DoInference(img, imgSize)
 ```
 
 # Features
-- [x] Support Atlas300, Atlas500, Atlas200SoC.
+- [x] Support Atlas300. Make little change on CMakeLists.txt to support Atlas500, Atlas200SoC.
 - [x] Resize in DVPP, so you can use images of any shape in a batch inference.
-- [x] Auto alignUp.
+- [x] Auto alignUp for DVPP input.
 - [x] Do mean and std opteration in the first layer (AIPP)
 - [x] Dynamic graph.
 - [x] High performance data transfer between host and device.
@@ -62,10 +62,16 @@ cd atlaswrapper
 bash build.sh A300 #(options: A500, A200)
 ```
 then you can intergrate it into your own project with libatlasWrapper.so and Net.h, for python module, you get pyatlas.so
+# Model Conersion
+Please follow the details from the documents of Atlas300
 
 # Demo
-Please check the c++ & python demo from test folder.
+Please check the c++ & python demo on test folder.
 
 # Liscense
+AtlasWrapper is released under the [Apache 2.0 license].
 
 
+# TODO
+1. Add demo for model conversion.
+2. Modify CMakeLists.txt to support A500, A200SoC.
